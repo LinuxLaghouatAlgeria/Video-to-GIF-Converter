@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محول الفيديو إلى GIF</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container py-4">
+        <header class="text-center mb-5">
+            <h1>محول الفيديو إلى GIF</h1>
+            <p class="text-muted">قم بتحويل مقاطع الفيديو إلى صور متحركة GIF بسهولة</p>
+            
+         
+        </header>
+
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <form id="uploadForm" class="mb-4">
+                            <div class="mb-3">
+                                <label class="form-label">اختر ملف فيديو</label>
+                                <input type="file" class="form-control" id="videoFile" accept="video/*" required>
+                            </div>
+                            
+                            <div id="videoSettings" style="display: none;">
+                                <div class="mb-3">
+                                    <label class="form-label">مدة الفيديو: <span id="videoDuration">0</span> ثانية</label>
+                                </div>
+                                
+                                <div class="row mb-3">
+                                    <div class="col">
+                                        <label class="form-label">من (ثانية)</label>
+                                        <input type="number" class="form-control" id="startTime" value="0" min="0">
+                                    </div>
+                                    <div class="col">
+                                        <label class="form-label">إلى (ثانية)</label>
+                                        <input type="number" class="form-control" id="endTime" value="15" min="0">
+                                    </div>
+                                </div>
+                                
+                                <div class="row mb-3">
+                                    <div class="col">
+                                        <label class="form-label">العرض (px)</label>
+                                        <input type="number" class="form-control" id="width" value="320" min="1">
+                                    </div>
+                                    <div class="col">
+                                        <label class="form-label">الارتفاع (px)</label>
+                                        <input type="number" class="form-control" id="height" value="240" min="1">
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label class="form-label">السرعة (FPS)</label>
+                                    <select class="form-select" id="fps">
+                                        <option value="5">5</option>
+                                        <option value="10" selected>10</option>
+                                        <option value="15">15</option>
+                                        <option value="20">20</option>
+                                    </select>
+                                </div>
+                                
+                                <button type="button" class="btn btn-primary w-100" id="convertBtn">تحويل إلى GIF</button>
+                            </div>
+                        </form>
+                        
+                        <div id="progress" class="progress mb-3" style="display: none;">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"></div>
+                        </div>
+                        
+                        <div id="result" style="display: none;">
+                            <div class="text-center">
+                                <img id="gifPreview" class="img-fluid mb-3" alt="GIF Preview">
+                                <div>
+                                    <a id="downloadBtn" class="btn btn-success" download>تحميل GIF</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+          <!-- إضافة قسم تحميل البرنامج -->
+            <div class="download-section mb-4">
+                <h5 class="mb-3">تحميل النسخة المكتبية</h5>
+                <div class="d-flex justify-content-center gap-2">
+                    <a href="https://mega.nz/file/NX8gFApJ#JZLWa955iuHMtwKdWZKzfPRbT0M1uZ-OU4KLXlaG2sc" class="btn btn-primary">
+                        <i class="fas fa-windows"></i>
+                        تحميل لـ Windows
+                    </a>
+                    <a href="https://mega.nz/file/RGEVkCDY#fR67vTQjqUB-rdftBXRKyH6if8fCSgNfbfOfpwKKiEU" class="btn btn-secondary">
+                        <i class="fas fa-linux"></i>
+                        تحميل لـ Linux
+                    </a>
+                </div>
+            </div>
+        <footer class="text-center mt-5">
+            <p class="text-muted">
+                تطوير: {{ developer }} © {{ year }}
+            </p>
+            <div class="social-links">
+                <a href="{{ facebook }}" target="_blank" class="btn btn-outline-primary btn-sm mx-1">فيسبوك</a>
+                <a href="{{ youtube }}" target="_blank" class="btn btn-outline-danger btn-sm mx-1">يوتيوب</a>
+                <a href="{{ blog }}" target="_blank" class="btn btn-outline-secondary btn-sm mx-1">المدونة</a>
+                <a href="{{ twitter }}" target="_blank" class="btn btn-outline-info btn-sm mx-1">تويتر</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

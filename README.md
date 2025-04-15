@@ -1,5 +1,3 @@
-# Video-to-GIF-Converter
-محول الفيديو إلى GIF - Video to GIF Converter
 # محول الفيديو إلى GIF - نسخة الويب
 
 تطبيق ويب لتحويل الفيديو إلى صور متحركة GIF باستخدام Flask و Python.
