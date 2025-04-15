@@ -52,6 +52,9 @@ gunicorn app:app
 - حد أقصى لحجم الملف: 200 ميجابايت
 - معاينة مباشرة للصورة المتحركة
 - واجهة مستخدم سهلة الاستخدام
+- Linux : https://mega.nz/file/RGEVkCDY#fR67vTQjqUB-rdftBXRKyH6if8fCSgNfbfOfpwKKiEU
+- Windows : https://mega.nz/file/NX8gFApJ#JZLWa955iuHMtwKdWZKzfPRbT0M1uZ-OU4KLXlaG2sc
+
 
 ## معلومات المطور
 
